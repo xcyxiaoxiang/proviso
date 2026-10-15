@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/001.png" width="300" alt="Proviso">
+  <img src="./assets/logo.png" width="300" alt="Proviso">
 </p>
 
 # Proviso — AI-Native Spec-Driven Development Kit
@@ -18,7 +18,7 @@ requirements ──▶ designing ──▶ implementing ──▶ verifying
 调试回路：发现问题 ──▶ debugging ──▶ 回归验证
 ```
 
-![工作流](./assets/002.jpg)
+![工作流](./assets/workflow.png)
 
 ## 核心技能（4）
 
@@ -192,6 +192,16 @@ Proviso 的设计深受以下开源项目的启发：
 - 三门流程：需求确定 → 文档审阅 → 设计确认
 
 **同日收尾调整：** 由于"归档冻结"与活文档理念冲突，取消归档环节（文档原地维护）；主题目录改用 `docs/NN_<name>/`；req / des 增加"变更记录"章节。
+
+**平台适配（2026-10-16）：**
+- OpenCode 插件 V2 化：V1/V2 双兼容、零依赖——技能经 `ctx.skill.transform` 原生注册、bootstrap 经 `context` 钩子注入（含子会话防注入与失败隔离）
+- 新增 **Pi** 与 **omp (oh-my-pi)** 扩展适配（`.pi/`、`.omp/`）
+- hooks 加固（PATH 独立性 / EPIPE 吸收 / Windows Git 检测）；Codex marketplace 恢复；Claude marketplace 纳入版本管理
+- 工具映射刷新：opencode / codex / pi / omp 四份 references
+
+**品牌更名（2026-10-16）：**
+- superPlus → **Proviso**（Proviso = 条文——需求与验收即条文）
+- 包名 / 插件 id / 技能 `using-proviso` / 全部文档与 URL 同步
 
 ### v1.0.0 — 核心工作流重构 (2026-07-13)
 

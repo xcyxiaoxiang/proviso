@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" font-family="'Noto Sans CJK SC','Noto Sans','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0" stop-color="#C3EC7F"/>
+      <stop offset="1" stop-color="#2FB984"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#14315E" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="850" fill="#F6F8FB"/>
+
+  <!-- 标题区 -->
+  <text x="800" y="96" text-anchor="middle" font-size="46" font-weight="800" fill="#14315E" letter-spacing="2">Proviso · 规格驱动开发工作流</text>
+  <text x="800" y="140" text-anchor="middle" font-size="20" fill="#7E8DA6" letter-spacing="3">双事实源：requirements.md + design.md</text>
+
+  <!-- ============ 主链卡片（4 张） ============ -->
+  <!-- 卡片 1: requirements -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="210" width="260" height="230" rx="22" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(260,268)" fill="none" stroke="#1F4B8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 5.5h16v10.5h-8.5L7 20.5v-4.5H4z"/>
+    <path d="M8.5 10.8l2 2 4-4.2"/>
+  </g>
+  <text x="280" y="372" text-anchor="middle" font-size="23" font-weight="700" fill="#14315E">requirements</text>
+  <text x="280" y="408" text-anchor="middle" font-size="15.5" fill="#6B7A93">需求讨论 + req 文档</text>
+  <text x="280" y="432" text-anchor="middle" font-size="15.5" fill="#6B7A93">（含验收标准）</text>
+
+  <!-- 卡片 2: designing -->
+  <g filter="url(#shadow)">
+    <rect x="497" y="210" width="260" height="230" rx="22" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(607,268)" fill="none" stroke="#1F4B8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 19.5l1-3.5L16 5.5l3 3L8.5 19z"/>
+    <path d="M14 7.5l3 3"/>
+  </g>
+  <text x="627" y="372" text-anchor="middle" font-size="23" font-weight="700" fill="#14315E">designing</text>
+  <text x="627" y="408" text-anchor="middle" font-size="15.5" fill="#6B7A93">des 详设文档</text>
+  <text x="627" y="432" text-anchor="middle" font-size="15.5" fill="#6B7A93">（可施工、按情况填）</text>
+
+  <!-- 卡片 3: implementing -->
+  <g filter="url(#shadow)">
+    <rect x="844" y="210" width="260" height="230" rx="22" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(954,268)" fill="none" stroke="#1F4B8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 6.5L4.5 12 9 17.5"/>
+    <path d="M15 6.5L19.5 12 15 17.5"/>
+  </g>
+  <text x="974" y="372" text-anchor="middle" font-size="23" font-weight="700" fill="#14315E">implementing</text>
+  <text x="974" y="408" text-anchor="middle" font-size="15.5" fill="#6B7A93">任务清单 + TDD 开发</text>
+  <text x="974" y="432" text-anchor="middle" font-size="15.5" fill="#6B7A93">（防偏移执行）</text>
+
+  <!-- 卡片 4: verifying -->
+  <g filter="url(#shadow)">
+    <rect x="1191" y="210" width="260" height="230" rx="22" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(1301,268)" fill="none" stroke="#1F4B8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5l7 2.8v5.4c0 4.2-3 7.2-7 8.8-4-1.6-7-4.6-7-8.8V6.3z"/>
+    <path d="M9 11.8l2.2 2.2 4-4.2"/>
+  </g>
+  <text x="1321" y="372" text-anchor="middle" font-size="23" font-weight="700" fill="#14315E">verifying</text>
+  <text x="1321" y="408" text-anchor="middle" font-size="15.5" fill="#6B7A93">验收对账 + 收尾</text>
+  <text x="1321" y="432" text-anchor="middle" font-size="15.5" fill="#6B7A93">（逐条对账验收）</text>
+
+  <!-- ============ 卡间箭头 ============ -->
+  <g stroke="#14315E" stroke-width="3.5" fill="none">
+    <line x1="416" y1="325" x2="482" y2="325"/>
+    <line x1="763" y1="325" x2="829" y2="325"/>
+    <line x1="1110" y1="325" x2="1176" y2="325"/>
+  </g>
+  <g fill="#14315E">
+    <path d="M481 315.5l12 9.5-12 9.5z"/>
+    <path d="M828 315.5l12 9.5-12 9.5z"/>
+    <path d="M1175 315.5l12 9.5-12 9.5z"/>
+  </g>
+
+  <!-- ============ Gate 标签 ============ -->
+  <g font-size="15" font-weight="600" fill="#FFFFFF">
+    <rect x="175" y="472" width="210" height="40" rx="20" fill="url(#green)"/>
+    <text x="280" y="497" text-anchor="middle" fill="#0F2C25">Gate 1 · 需求确定</text>
+    <rect x="175" y="522" width="210" height="40" rx="20" fill="url(#green)"/>
+    <text x="280" y="547" text-anchor="middle" fill="#0F2C25">Gate 2 · 文档审阅</text>
+    <rect x="522" y="472" width="210" height="40" rx="20" fill="url(#green)"/>
+    <text x="627" y="497" text-anchor="middle" fill="#0F2C25">Gate 3 · 设计确认</text>
+  </g>
+
+  <!-- ============ 调试回路 ============ -->
+  <!-- 下行虚线 -->
+  <path d="M1295 452 L1295 614" stroke="#2FB984" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+  <path d="M1285 608l10 14 10-14z" fill="#2FB984"/>
+  <text x="1281" y="540" text-anchor="end" font-size="14" fill="#8A99B0">发现问题</text>
+
+  <!-- debugging 卡 -->
+  <g filter="url(#shadow)">
+    <rect x="1201" y="630" width="240" height="64" rx="18" fill="url(#green)"/>
+  </g>
+  <text x="1321" y="670" text-anchor="middle" font-size="21" font-weight="700" fill="#0F2C25">debugging</text>
+
+  <!-- 上行虚线 -->
+  <path d="M1347 630 L1347 466" stroke="#2FB984" stroke-width="2.5" stroke-dasharray="8 8" fill="none"/>
+  <path d="M1337 472l10-14 10 14z" fill="#2FB984"/>
+  <text x="1361" y="540" text-anchor="start" font-size="14" fill="#8A99B0">修复后回归</text>
+
+  <!-- ============ 核心纪律（左下区） ============ -->
+  <text x="150" y="602" font-size="15" font-weight="700" fill="#9AA9BF" letter-spacing="4">核心纪律</text>
+  <text x="150" y="648" font-size="16.5" font-weight="700" fill="#14315E">文档先行</text>
+  <text x="258" y="648" font-size="15.5" fill="#7E8DA6">改前定稿 · 改中回流 · 改后一致</text>
+  <text x="150" y="684" font-size="16.5" font-weight="700" fill="#14315E">防偏移</text>
+  <text x="258" y="684" font-size="15.5" fill="#7E8DA6">需求追溯 · 边界白名单 · 活动账本</text>
+  <text x="150" y="720" font-size="16.5" font-weight="700" fill="#14315E">验收对账</text>
+  <text x="258" y="720" font-size="15.5" fill="#7E8DA6">每条验收标准都要 file:line 证据</text>
+
+  <!-- ============ 底部信息 ============ -->
+  <text x="800" y="806" text-anchor="middle" font-size="16" fill="#8A99B0" letter-spacing="1">产出物：docs/NN_&lt;name&gt;/ — requirements.md · design.md · tasks.md（活文档，原地维护）</text>
+</svg>

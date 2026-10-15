@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="640" viewBox="0 0 800 640" font-family="'Noto Sans CJK SC','Noto Sans','Microsoft YaHei',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A3868"/>
+      <stop offset="1" stop-color="#0C1E3E"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0" stop-color="#C3EC7F"/>
+      <stop offset="1" stop-color="#2FB984"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="640" rx="32" fill="url(#bg)"/>
+
+  <!-- 渐隐点：流程推进 -->
+  <circle cx="140" cy="292" r="7" fill="#C3EC7F" opacity="0.30"/>
+  <circle cx="172" cy="277" r="8" fill="#C3EC7F" opacity="0.55"/>
+  <circle cx="206" cy="263" r="9" fill="#B4E86B" opacity="0.90"/>
+
+  <!-- 主弧线 -->
+  <path d="M 240 252 Q 400 112 556 250" fill="none" stroke="url(#green)" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- 右端方向标（chevron） -->
+  <path d="M 552 228 L 584 252 L 554 279" fill="none" stroke="#2FB984" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 品牌名 -->
+  <text x="400" y="410" text-anchor="middle" font-size="150" font-weight="800" letter-spacing="3">
+    <tspan fill="url(#green)">P</tspan><tspan fill="#F7FAFF">roviso</tspan>
+  </text>
+
+  <!-- 标语 -->
+  <text x="400" y="482" text-anchor="middle" font-size="26" fill="#7E96BC" letter-spacing="9">SPEC-DRIVEN DEVELOPMENT</text>
+</svg>

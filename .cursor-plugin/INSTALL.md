@@ -9,7 +9,7 @@ git clone https://github.com/xcyxiaoxiang/proviso.git
 cursor /path/to/proviso
 ```
 
-Cursor 通过 `.cursor/skills/`（符号链接到 `skills/`）自动发现 12 个 Proviso 技能。
+Cursor 通过 `.cursor/skills/`（符号链接到 `skills/`）自动发现 8 个 Proviso 技能。
 
 ## 全局安装
 
@@ -43,7 +43,7 @@ rm ~/.cursor/skills/proviso
 ## Troubleshooting
 
 - 技能未显示：确认 `.cursor/skills/` 符号链接正确（`ls -la .cursor/skills`）
-- 某些技能缺失：确认 `skills/` 下全部 12 个技能目录包含 `SKILL.md`
+- 某些技能缺失：确认 `skills/` 下全部 8 个技能目录包含 `SKILL.md`
 - 重启 Cursor 后重试
 
 更多信息见 `AGENTS.md`。
