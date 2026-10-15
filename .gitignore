@@ -3,9 +3,5 @@
 .claude/
 .DS_Store
 node_modules/
-inspo
-triage/
-referenceDocs/
-transDocs/
 .opencode/memory/
 docs/

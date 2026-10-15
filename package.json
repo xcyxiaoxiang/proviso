@@ -1,6 +1,14 @@
 {
-  "name": "superplus",
-  "version": "1.0.0",
+  "name": "proviso",
+  "version": "2.0.0",
   "type": "module",
-  "main": ".opencode/plugins/superplus.js"
+  "main": ".opencode/plugins/proviso.js",
+  "pi": {
+    "extensions": ["./.pi/extensions/proviso.ts"],
+    "skills": ["./skills"]
+  },
+  "omp": {
+    "extensions": ["./.omp/extensions/proviso.ts"],
+    "skills": ["./skills"]
+  }
 }

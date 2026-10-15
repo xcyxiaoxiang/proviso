@@ -1,22 +1,17 @@
-# superPlus — Spec-Driven Development Kit for Claude Code
+# Proviso — Spec-Driven Development Kit for Claude Code
 
-superPlus is a **spec-driven development workflow** that guides Claude Code through a complete feature lifecycle: discover, design, plan, implement (TDD), verify, sync, and archive.
+Proviso is a **spec-driven development workflow** built on two sources of truth per change — `requirements.md` and `design.md`. Documents drive development; doc drift is a bug.
 
 ## Workflow
 
 ```
-exploring ──→ designing ──→ write-plan-tasks ──→ apply-change ──→ verify-change ──→ sync-specs ──→ archive-change
-(explore)     (design)      (specs + tasks)     (TDD + execute)   (5D validate)     (merge specs)    (finalize)
-                                                                          │
-                                                                          ▼
-                                                                 root-cause-debugging
-                                                                  (issues triage & fix)
-                                                                          │
-                                                                          ▼
-                                                                      re-verify
+requirements ──▶ designing ──▶ implementing ──▶ verifying
+(discussion +    (design doc)   (task list +     (acceptance
+ req document)                   build)           + closure)
 
-quick-change ──→ 4-step condensed flow (Quick Spec → Implement → Verify → Finalize)
-(for small changes)
+Gates: Gate 1 requirements confirmed · Gate 2 requirements reviewed · Gate 3 design confirmed
+
+Fix loop: issue found ──▶ debugging ──▶ re-verify
 ```
 
 ## Getting Started
@@ -24,54 +19,48 @@ quick-change ──→ 4-step condensed flow (Quick Spec → Implement → Verif
 At session start, load the entry skill:
 
 ```
-Skill using-superplus
+Skill using-proviso
 ```
 
 This loads the skill discipline rules and shows all available skills. Then follow the workflow above.
 
-### Quick Start for New Features
+### Quick Start for a New Change
 
-1. **`Skill exploring`** — explore the problem space (if requirements unclear)
-2. **`Skill designing`** — structure the design and produce design doc
-3. **`Skill write-plan-tasks`** — generate specs and tasks
-4. **`Skill apply-change`** — implement with TDD and subagent-driven development
-5. **`Skill verify-change`** — 5D verification
-   - **If CRITICAL issues found** → `Skill root-cause-debugging` → re-run verify-change
-6. **`Skill sync-specs`** — merge delta specs into main spec library
-7. **`Skill archive-change`** — finalize and archive
+1. **`Skill requirements`** — discuss and define the requirements (frontier rounds; ≤3 questions per round), pass Gate 1, write `requirements.md`, pass Gate 2
+2. **`Skill designing`** — write `design.md` from the requirements, pass Gate 3
+3. **`Skill implementing`** — write the task list, then build task by task (TDD, boundary whitelist, two-verdict review)
+4. **`Skill verifying`** — reconcile every acceptance criterion (`file:line` evidence), fix blockers via `Skill debugging`, close out
 
 ## Skills Overview
 
 | Skill | Trigger | Output |
 |-------|---------|--------|
-| `exploring` | Unclear requirements, need to investigate | Exploration summary (in conversation) |
-| `designing` | Design is needed | Design doc (`docs/changes/<topic>/design.md`) |
-| `write-plan-tasks` | Design approved | Full artifacts: specs + tasks (`docs/changes/<name>/`) |
-| `apply-change` | Tasks ready | Subagent-driven TDD implementation, tests passing |
-| `verify-change` | Implementation done | 5D verification report + issues triage (CRITICAL → `root-cause-debugging` fix loop) |
-| `sync-specs` | Verify passed | Updated main specs (`docs/specs/`) |
-| `archive-change` | All done | Archived (`docs/changes/archive/`) |
-| `quick-change` | Small change needed | Condensed 4-step: Quick Spec → Implement → Verify → Finalize |
+| `requirements` | A change needs its requirements defined | `docs/NN_<name>/requirements.md` (acceptance criteria included) |
+| `designing` | Requirements approved | `docs/NN_<name>/design.md` |
+| `implementing` | Design confirmed | `tasks.md` + TDD implementation with boundary guards |
+| `verifying` | Implementation done | Acceptance reconciliation + close-out |
+| `debugging` | Bug, failing test, unexpected behavior | Root-cause fix (minimal requirements: current / expected / must-not-change) |
+| `test-driven-development` | Writing tests | Red-green-refactor cycle |
+| `using-git-worktrees` | Optional isolation | Isolated worktree |
+| `using-proviso` | Session start | Skill-invocation discipline |
 
-Other skills:
+## Core Discipline
 
-- **Bug fix**: `root-cause-debugging` — 5-phase systematic debugging, auto-triggered by `verify-change`
-- **TDD**: `test-driven-development` — red-green-refactor cycle
-- **Worktree isolation**: `using-git-worktrees` — protects main branch during implementation
-- **Writing skills**: `writing-skills` — TDD for documentation
-- **Entry point**: `using-superplus` — skill invocation discipline
+- `requirements.md` and `design.md` are the **only sources of truth**;
+- **Doc drift is a bug** — behavior changes update the documents first, then the code;
+- **Defensive additions** are allowed during development (transparent + flowing back to the docs); **expansion** is forbidden;
+- Verification requires **evidence** — no `file:line`, no "met".
 
 ## Project Structure
 
 ```
-superPlus/
-├── skills/              # 13 skills (8 core + 5 auxiliary)
+Proviso/
+├── skills/              # 8 skills (4 main chain + 3 auxiliary + 1 entry)
 ├── hooks/               # Session-start hooks
 ├── scripts/             # Helper scripts
 ├── docs/
-│   ├── changes/         # Designs + active changes (topic/design.md + 1.specs/ + 2.tasks.md)
-│   │   └── archive/     # Archived changes
-│   └── specs/           # Main spec library
+│   ├── changes/         # Active changes (requirements.md + design.md + tasks.md)
+│   └── NN_<name>/       # Topic directories (kept in place)
 ├── .opencode/           # OpenCode plugin config
 ├── .claude-plugin/      # Claude Code plugin manifest
 ├── .codex-plugin/       # Codex plugin config
@@ -83,13 +72,14 @@ superPlus/
 
 ## Conventions
 
-- **Design docs**: `docs/changes/<topic>/design.md` — topic is kebab-case
-- **Main specs**: `docs/specs/<capability>/spec.md`
-- **Change artifacts**: `docs/changes/<name>/{design.md,1.specs/*,2.tasks}.md`
-- **Archives**: `docs/changes/archive/YYYY-MM-DD-<name>/`
-- **TDD**: Always write failing test first, then implement, then verify
-- **All artifacts required**: specs + tasks for every change
+- **Requirements doc**: `docs/NN_<name>/requirements.md` — acceptance criteria numbered `4.x.y`
+- **Design doc**: `docs/NN_<name>/design.md` — fill by situation
+- **Task list**: `docs/NN_<name>/tasks.md` — service requirements + boundary whitelist + ledger
+- **Topic directories**: `docs/NN_<name>/` — never archived or moved
+- **Change Log**: requirements / design documents keep a Change Log at the end
+- **Numbering**: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`
+- **TDD**: always write the failing test first
 
 ## Tool Mapping for Claude Code
 
-This skill uses Claude Code's native tool names. No adaptation needed.
+These skills use Claude Code's native tool names. No adaptation needed.

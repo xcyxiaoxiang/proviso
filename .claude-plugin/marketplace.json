@@ -1,17 +1,17 @@
 {
-  "name": "superplus",
-  "description": "Development marketplace for superPlus spec-driven development kit",
+  "name": "proviso",
+  "description": "Development marketplace for Proviso spec-driven development kit",
   "owner": {
-    "name": "superPlus"
+    "name": "Proviso"
   },
   "plugins": [
     {
-      "name": "superplus",
-      "description": "superPlus: spec-driven development workflow — design, plan, implement (TDD), verify, sync, archive",
-      "version": "0.2.2",
+      "name": "proviso",
+      "description": "Proviso: spec-driven development workflow — requirements, design, implement (TDD), verify, archive",
+      "version": "2.0.0",
       "source": "./",
       "author": {
-        "name": "superPlus"
+        "name": "Proviso"
       }
     }
   ]

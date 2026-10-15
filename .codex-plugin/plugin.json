@@ -1,34 +1,35 @@
 {
-  "name": "superplus",
-  "version": "0.2.2",
-  "description": "superPlus: spec-driven development workflow — design, plan, implement (TDD), verify, sync, archive",
+  "name": "proviso",
+  "version": "2.0.0",
+  "description": "Proviso: spec-driven development workflow — requirements, design, implement (TDD), verify, archive",
   "author": {
-    "name": "superPlus"
+    "name": "Proviso"
   },
-  "homepage": "https://github.com/xcyxiaoxiang/superplus",
-  "repository": "https://github.com/xcyxiaoxiang/superplus",
+  "homepage": "https://github.com/xcyxiaoxiang/proviso",
+  "repository": "https://github.com/xcyxiaoxiang/proviso",
   "license": "MIT",
   "keywords": [
     "skills",
     "tdd",
     "spec-driven",
-    "exploring",
+    "requirements",
     "designing",
     "verification"
   ],
   "skills": "./skills/",
+  "hooks": {},
   "interface": {
-    "displayName": "superPlus",
-    "shortDescription": "Spec-driven development: design → plan → TDD → verify → archive",
-    "longDescription": "Use superPlus to guide agent work through exploring, designing, implementation planning, test-driven development, 5D verification, spec syncing, and archiving workflows.",
-    "developerName": "superPlus",
+    "displayName": "Proviso",
+    "shortDescription": "Spec-driven development: requirements → design → TDD → verify → archive",
+    "longDescription": "Use Proviso to guide agent work through requirements definition, design, test-driven implementation, acceptance reconciliation, and archiving workflows.",
+    "developerName": "Proviso",
     "category": "Coding",
     "capabilities": ["Interactive", "Read", "Write"],
     "defaultPrompt": [
       "I've got an idea for something I'd like to build.",
       "Let's add a feature to this project."
     ],
-    "websiteURL": "https://github.com/xcyxiaoxiang/superplus",
+    "websiteURL": "https://github.com/xcyxiaoxiang/proviso",
     "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
     "termsOfServiceURL": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
     "brandColor": "#F59E0B",

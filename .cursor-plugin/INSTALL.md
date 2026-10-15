@@ -1,33 +1,33 @@
-# Installing superPlus for Cursor
+# Installing Proviso for Cursor
 
 ## 项目级安装
 
-将 superPlus 克隆到项目目录，直接在 Cursor 中打开：
+将 Proviso 克隆到项目目录，直接在 Cursor 中打开：
 
 ```bash
-git clone https://github.com/xcyxiaoxiang/superplus.git
-cursor /path/to/superplus
+git clone https://github.com/xcyxiaoxiang/proviso.git
+cursor /path/to/proviso
 ```
 
-Cursor 通过 `.cursor/skills/`（符号链接到 `skills/`）自动发现 12 个 superPlus 技能。
+Cursor 通过 `.cursor/skills/`（符号链接到 `skills/`）自动发现 12 个 Proviso 技能。
 
 ## 全局安装
 
 通过符号链接将技能安装到 Cursor 全局技能目录，所有项目可用：
 
 ```bash
-# 1. 克隆 superPlus 到本地
-git clone https://github.com/xcyxiaoxiang/superplus.git ~/projects/superPlus
+# 1. 克隆 Proviso 到本地
+git clone https://github.com/xcyxiaoxiang/proviso.git ~/projects/Proviso
 
 # 2. 创建符号链接到 Cursor 全局技能目录
-ln -s ~/projects/superPlus/skills ~/.cursor/skills/superplus
+ln -s ~/projects/Proviso/skills ~/.cursor/skills/proviso
 ```
 
 ## Verification
 
 启动 Cursor 后检查：
 
-- 在 Agent Chat 中输入 `/` 查看技能列表，应看到 superPlus 技能
+- 在 Agent Chat 中输入 `/` 查看技能列表，应看到 Proviso 技能
 - 打开 **Cursor Settings → Rules** → **Agent Decides** 部分查看已发现的技能
 
 ## 卸载
@@ -37,7 +37,7 @@ ln -s ~/projects/superPlus/skills ~/.cursor/skills/superplus
 rm -r .cursor/skills
 
 # 全局安装：删除全局符号链接
-rm ~/.cursor/skills/superplus
+rm ~/.cursor/skills/proviso
 ```
 
 ## Troubleshooting

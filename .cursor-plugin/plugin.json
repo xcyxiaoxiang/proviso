@@ -1,13 +1,13 @@
 {
-  "name": "superplus",
-  "displayName": "superPlus",
-  "description": "Spec-driven development workflow: design, plan, implement (TDD), verify, sync, archive",
-  "version": "0.2.2",
+  "name": "proviso",
+  "displayName": "Proviso",
+  "description": "Spec-driven development workflow: requirements, design, implement (TDD), verify, archive",
+  "version": "2.0.0",
   "author": {
-    "name": "superPlus"
+    "name": "Proviso"
   },
-  "homepage": "https://github.com/xcyxiaoxiang/superplus",
-  "repository": "https://github.com/xcyxiaoxiang/superplus",
+  "homepage": "https://github.com/xcyxiaoxiang/proviso",
+  "repository": "https://github.com/xcyxiaoxiang/proviso",
   "license": "MIT",
   "logo": "assets/001.png",
   "keywords": [
