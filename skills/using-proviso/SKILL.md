@@ -39,6 +39,18 @@ requirements ──▶ designing ──▶ implementing ──▶ verifying
 
 `requirements.md` and `design.md` are the only sources of truth for a change. **Doc drift is a bug**: behavior changes update the documents first — never the other way around.
 
+## Coding Discipline
+
+These rules hold every turn — not only inside the gated workflow.
+
+1. **Think before coding.** Uncertain? Stop and ask; a question is progress, not failure. When a request has two plausible readings, present both instead of picking one silently.
+2. **Simplicity first.** Write the least code that solves the stated problem. If a senior engineer would call it overcomplicated, it is.
+3. **Surgical changes.** Every changed line traces back to the user's request. Clean up only the orphans your own change created; leave unrelated code, comments, and formatting alone.
+4. **Goal-driven execution.** Turn the instruction into a verifiable goal before touching code — "fix the bug" becomes "write the failing test, then make it pass".
+5. **Comment discipline.** Comments explain why, never what. One line is the limit — past that, delete it or change the code. Multi-step logic gets numbered steps (1. → 1.1 → 1.1.1).
+
+Trivial tasks need judgment, not ceremony.
+
 ## When Multiple Skills Apply
 
 | Situation | Skill |

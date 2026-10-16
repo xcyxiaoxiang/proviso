@@ -54,6 +54,38 @@ For each task, in order:
 4. **Fix loop**: on failure, the same implementer fixes; the same reviewer re-checks only the flagged items; repeat until both verdicts pass;
 5. **Update the ledger** in `tasks.md`: completion mark + record (actual changes, deviations). Include the completed tasks' summary in the next dispatch.
 
+## Discipline During Implementation
+
+**Simplicity first.** The least code that solves the stated problem: no features beyond the request, no abstractions for single-use code, no unrequested configuration, no error handling for impossible scenarios. Defensive additions to already-defined behavior stay allowed — report them and flow them back to the documents. The judge is one question: would a senior engineer call this overcomplicated?
+
+**Surgical changes.** Every changed line traces directly to the task's requirements. Match the style of the code you touch. Do not improve adjacent code, comments, or formatting. Remove only the orphans your own change created; pre-existing dead code gets reported, never deleted on the spot.
+
+**Refactor scope.** The TDD cycle's refactor step covers the code you just changed. Touching pre-existing duplication or naming is expansion: record it in the ledger's findings or tell the user — do not fix it under this task.
+
+**Comment discipline.** Comments explain why, not what. One line is the limit — past that, delete the comment or change the code. Multi-step logic gets numbered steps (1. → 1.1 → 1.1.1), matching the document numbering. A behavior change updates its comments in the same edit; a stale comment is a defect. Unrelated comments stay untouched.
+
+Bad — the comment restates the code:
+
+```typescript
+/**
+ * Processes the user data.
+ * Takes the user data as input and processes it according to the
+ * business rules defined in the specification...
+ */
+```
+
+Good — one line each, numbered, all why:
+
+```typescript
+function processUser(userData: UserData) {
+  // 1. Merge defaults first — local fields win over remote
+  // 1.1 Remote ships ISO dates, local ships epoch ms
+  const merged = normalize({ ...remote, ...userData });
+  // 2. Reject stale sessions (TTL 24h, config/session.yaml:4)
+  return merged.filter(isFresh);
+}
+```
+
 ## Step 4: Group Reconciliation & Recovery
 
 - After each task group: reconcile **actual output vs req/des** — catch drift early (new discoveries go to "findings", not into the code);
@@ -91,6 +123,9 @@ When all tasks are complete: run the full suite, mark the ledger, and announce t
 - Let a documented deficit pass silently: out-of-scope findings are recorded, not fixed
 - Modify requirements/design without going through Step 5
 - Leave behavior changes unrecorded in the docs — "doc drift is a bug"
+- Refactor or "improve" code the task did not touch
+- Add features, abstractions, or configuration the documents do not ask for
+- Write comments that restate the code, or let them go stale
 
 ---
 

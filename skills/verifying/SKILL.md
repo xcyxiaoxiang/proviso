@@ -37,6 +37,12 @@ For **every** acceptance criterion (`4.x.y`):
 - A criterion that cannot be evidenced → **blocker** (`"not met: <criterion>"`);
 - Criteria that are genuinely inapplicable get marked as such, not skipped silently.
 
+## Criteria Strength
+
+A strong criterion is verifiable and names its passing output — "the new case passes and the suite stays green", "the CLI prints the version". A weak criterion ("make it work", "should be fine now") cannot be looped against: clarify it with the user before building or verifying against it.
+
+Under a weak criterion, "met" is not a verdict — strengthen the criterion first, or report it as not met.
+
 ---
 
 ## Step 3: Global Checks
@@ -106,6 +112,7 @@ Every finding carries a specific recommendation with `file:line` — never "cons
 
 - Close out with an open blocker
 - Report an acceptance criterion met without `file:line` evidence
+- Accept a weak success criterion ("it should work now") as proof of completion
 - Trust the ledger, task reviews, or reports over the code
 - Flag style/formatting — linters own those
 - Fix code here — blockers go through `debugging` (TDD + document flow-back included)

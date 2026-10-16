@@ -191,6 +191,8 @@ After green only:
 
 Keep tests green. Don't add behavior.
 
+Scope: refactor the code you just changed. Pre-existing duplication and naming problems are out of scope — report them, don't fix them mid-cycle.
+
 ### Repeat
 
 Next failing test for next feature.

@@ -62,6 +62,17 @@ Q2 — <question title>: <question body>
 
 When decisions crystallize during discussion, offer to capture them — they land in the requirements document (Step 4), not in chat-only.
 
+## Surfacing Assumptions
+
+Before the first frontier round, make your reading of the request explicit:
+
+- State in one line how you read the request;
+- When two readings are plausible, put both on the table with your recommendation — never pick one silently;
+- When a simpler approach exists, say so; push back when warranted;
+- When something is genuinely unclear, stop, name what is confusing, and ask.
+
+An unexamined assumption does not fail loudly — it surfaces later as rework, and a question costs one turn.
+
 ---
 
 ## Step 3: Gate 1 — Requirements Confirmed
@@ -118,6 +129,7 @@ Same gates apply; the document is just short.
 - Touch any file during discussion — "just trying it out" counts
 - Skip the baseline scan
 - Ask the user what you can look up yourself
+- Assume silently and act on the assumption
 - Write `requirements.md` before Gate 1, or start design before Gate 2
 - Treat "the user confirmed the idea in chat" as "the user confirmed the document" — both gates matter
 - Silently invent requirements that were never discussed — unresolved points go to "Open Questions" in the document

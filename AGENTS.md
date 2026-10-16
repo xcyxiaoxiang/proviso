@@ -28,6 +28,8 @@ Fix loop: issue found ──▶ debugging ──▶ re-verify
 
 Entry point: `using-proviso` — the skill-invocation discipline.
 
+A constant baseline applies every turn — the coding discipline in Conventions; the gated workflow only adds ceremony on top of it.
+
 ## Directory Structure
 
 ```
@@ -63,6 +65,8 @@ Proviso/
 - **User stories in requirements**: every requirement opens with "As a … I want … so that …"
 - **TDD**: always write the failing test first, then implement, then verify
 - **Doc drift is a bug**: behavior changes update `requirements.md` / `design.md` first — then the code
+- **Coding discipline, every turn**: think before coding (ask when uncertain; present both readings) · simplicity first (least code; would a senior call it overcomplicated?) · surgical changes (every changed line traces to the request) · goal-driven execution (rewrite the instruction as a verifiable goal) · comment discipline (why not what, one line, numbered steps)
+- **Comment language**: follow the codebase's existing dominant comment language; multi-step comments use the document numbering scheme (1. / 1.1 / 1.1.1)
 
 ## Installation
 

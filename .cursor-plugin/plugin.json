@@ -2,7 +2,7 @@
   "name": "proviso",
   "displayName": "Proviso",
   "description": "Spec-driven development workflow: requirements, design, implement (TDD), verify, archive",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Proviso"
   },

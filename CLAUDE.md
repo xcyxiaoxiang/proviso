@@ -44,12 +44,15 @@ This loads the skill discipline rules and shows all available skills. Then follo
 | `using-git-worktrees` | Optional isolation | Isolated worktree |
 | `using-proviso` | Session start | Skill-invocation discipline |
 
+A constant baseline applies every turn — the coding discipline in Core Discipline; the gated workflow only adds ceremony on top of it.
+
 ## Core Discipline
 
 - `requirements.md` and `design.md` are the **only sources of truth**;
 - **Doc drift is a bug** — behavior changes update the documents first, then the code;
 - **Defensive additions** are allowed during development (transparent + flowing back to the docs); **expansion** is forbidden;
 - Verification requires **evidence** — no `file:line`, no "met".
+- **Coding discipline, every turn**: ask when uncertain · least code that solves the stated problem · every changed line traces to the request · instructions become verifiable goals · comments explain why, one line, numbered steps.
 
 ## Project Structure
 
@@ -79,6 +82,7 @@ Proviso/
 - **Change Log**: requirements / design documents keep a Change Log at the end
 - **Numbering**: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`
 - **TDD**: always write the failing test first
+- **Comment language**: follow the codebase's existing dominant comment language; multi-step comments use the document numbering scheme (1. / 1.1 / 1.1.1)
 
 ## Tool Mapping for Claude Code
 

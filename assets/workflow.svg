@@ -111,6 +111,8 @@
   <text x="258" y="684" font-size="15.5" fill="#7E8DA6">需求追溯 · 边界白名单 · 活动账本</text>
   <text x="150" y="720" font-size="16.5" font-weight="700" fill="#14315E">验收对账</text>
   <text x="258" y="720" font-size="15.5" fill="#7E8DA6">每条验收标准都要 file:line 证据</text>
+  <text x="150" y="756" font-size="16.5" font-weight="700" fill="#14315E">常驻基线</text>
+  <text x="258" y="756" font-size="15.5" fill="#7E8DA6">先想再写 · 简单优先 · 外科手术 · 目标驱动 · 注释纪律（每回合生效）</text>
 
   <!-- ============ 底部信息 ============ -->
   <text x="800" y="806" text-anchor="middle" font-size="16" fill="#8A99B0" letter-spacing="1">产出物：docs/NN_&lt;name&gt;/ — requirements.md · design.md · tasks.md（活文档，原地维护）</text>
