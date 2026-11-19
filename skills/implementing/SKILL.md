@@ -31,28 +31,28 @@ Create `docs/NN_<name>/tasks.md` using `templates/tasks.md`.
 
 - **A task is one checkable result** — the smallest unit that earns its own test cycle and a review pass;
 - Every task carries: **service requirements** (which req entries it implements), **allowed-to-touch files** (boundary whitelist), **acceptance points** (referenced from req), verification means, and a **record field** (the ledger);
-- Implementation order follows dependencies; mark what can be parallel.
+- **Order by dependency waves**: tasks in the same wave share no dependencies and must not overlap in `Allowed to touch`; a later wave depends on earlier ones. Mark each task with its dependencies and wave — the executor dispatches a whole wave in parallel;
 
 ---
 
-## Step 3: Execute — the Task Loop
+## Step 3: Execute — Dependency Waves
 
-For each task, in order:
+Run wave by wave; inside one wave, tasks execute in parallel:
 
-1. **Assemble the context packet** — references, not pasted text:
+1. **Assemble the context packet** — per task, references not pasted text:
    - the task definition + boundary whitelist;
    - the related req entries and design sections (paths to read);
-   - **actual signatures from preceding tasks** (verified in code — never the plan's version);
+   - **interface contracts from the design document — never a sibling task's in-flight code**: parallel siblings cannot see each other; when a wave finishes, the controller reconciles the actual signatures against the design and records any deviation;
    - acceptance points and verification means.
-2. **Dispatch one subagent** with `implementer-brief.md`. Rules for the subagent:
+2. **Dispatch the wave** — one subagent per task with `implementer-brief.md`, in parallel where the harness supports it (`background` lanes; when it does not, run the wave sequentially). Before dispatching, check that the wave's whitelists do not overlap — an overlap means the wave was mis-planned: split it. Rules for each subagent stay as before:
    - **TDD is mandatory**: failing test first → minimal implementation → full suite green;
    - touch only whitelisted files; **no guessing** — unclear interfaces get looked up in code or reported, never invented;
-3. **Review with two verdicts** — dispatch a fresh reviewer with `task-reviewer.md`:
+3. **Review with two verdicts** — a fresh reviewer per task with `task-reviewer.md` (reviewers may also run in parallel):
    - **Verdict 1 · Requirement compliance**: implements what the req entries say — nothing missing, nothing extra ("more" check: defensive additions are allowed and must flow back to the docs; expansion is rejected);
    - **Verdict 2 · Quality & boundary**: code quality, and the diff against the whitelist — out-of-bound edits are reported, not tolerated;
    - The reviewer is read-only, independent, and never told what to ignore.
-4. **Fix loop**: on failure, the same implementer fixes; the same reviewer re-checks only the flagged items; repeat until both verdicts pass;
-5. **Update the ledger** in `tasks.md`: completion mark + record (actual changes, deviations). Include the completed tasks' summary in the next dispatch.
+4. **Fix loop**: on failure, the same implementer fixes; the same reviewer re-checks only the flagged items; repeat until both verdicts pass — the wave is not done until every task in it passes;
+5. **Update the ledger after the wave** — the controller records every finished task at once (parallel workers never write `tasks.md`); include the wave's summary in the next wave's dispatch.
 
 ## Discipline During Implementation
 
