@@ -32,6 +32,7 @@ Create `docs/NN_<name>/tasks.md` using `templates/tasks.md`.
 - **A task is one checkable result** — the smallest unit that earns its own test cycle and a review pass;
 - Every task carries: **service requirements** (which req entries it implements), **allowed-to-touch files** (boundary whitelist), **acceptance points** (referenced from req), verification means, and a **record field** (the ledger);
 - **Order by dependency waves**: tasks in the same wave share no dependencies and must not overlap in `Allowed to touch`; a later wave depends on earlier ones. Mark each task with its dependencies and wave — the executor dispatches a whole wave in parallel;
+- **Slice for parallelism**: when the work concentrates in one file or module, slice tasks by parallelizable units (different files, directories, or modules) rather than by feature — otherwise every wave degenerates to a single task and the parallel lanes buy nothing;
 
 ---
 

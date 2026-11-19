@@ -94,8 +94,9 @@ Every finding carries a specific recommendation with `file:line` — never "cons
 ## Step 6: Closure
 
 1. All clear → present the result, and **confirm with the user** before closing;
-2. **Do not move anything.** The documents stay in place (`docs/NN_<name>/`) and stay live — same-topic optimizations update them directly and append to their Change Logs;
-3. Completion summary for the user: tasks done, acceptance result, warnings carried.
+2. **Warnings land in the documents.** Append every carried warning to the change's **Open Questions** section in `requirements.md` — with today's date and the stage it must be resolved by. A warning that lives only in the report is lost; the next change in this topic re-checks the list first (see the `requirements` baseline step);
+3. **Do not move anything.** The documents stay in place (`docs/NN_<name>/`) and stay live — same-topic optimizations update them directly and append to their Change Logs;
+4. Completion summary for the user: tasks done, acceptance result, warnings carried.
 
 ```markdown
 ## Change Complete
@@ -116,6 +117,7 @@ Every finding carries a specific recommendation with `file:line` — never "cons
 - Trust the ledger, task reviews, or reports over the code
 - Flag style/formatting — linters own those
 - Fix code here — blockers go through `debugging` (TDD + document flow-back included)
+- Leave a carried warning only in the report — an untracked warning is a lost one
 - Skip the user confirmation before closing out
 
 ---

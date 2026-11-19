@@ -175,6 +175,12 @@ Proviso 的设计深受以下开源项目的启发：
 
 ## 版本记录
 
+### v2.5.0 — 闭环修补 + 插件冒烟测试 (2026-11-19)
+
+- **verifying**：carried warnings 必须落盘到改动的 Open Questions（附日期与解决阶段）——只写在报告里的 warning 等于丢失；`requirements` 的 Baseline 步骤开局先检查上一轮未决问题，形成闭环
+- **implementing**：补"按可并行单元切任务"的前提——工作集中在单文件/模块时按文件、目录、模块切分而非按功能，否则波次退化为单任务
+- **新增 `tests/proviso-plugin.test.mjs`**：零依赖冒烟测试（Node 内置 test runner）——V2 技能注册（8 个）、bootstrap 注入 / 子会话跳过 / 防重复注入、V1 兼容路径、工具映射；`npm test` 即跑
+
 ### v2.4.0 — 验证方式匹配（不再一刀切 TDD）(2026-11-19)
 
 `implementing` 增加"按任务类型选验证方式"：TDD 仍是逻辑类任务的默认，但存量代码用表征测试、UI 用快照/视觉检查、契约用 Contract-first、配置用冒烟、探索用 Spike；统一底线不变——「完成」必须有客观可执行的判据，不接受"它能用"。同时修掉模板（允许 inspection）与执行规则（强制 TDD）之间的矛盾；`test-driven-development` 的例外条款同步扩展（存量代码 / UI）。

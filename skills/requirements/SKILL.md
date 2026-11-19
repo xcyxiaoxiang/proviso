@@ -32,7 +32,7 @@ Baseline ──▶ Frontier rounds ──▶ GATE 1 ──▶ Write requirements
 Fixed actions (the "read reality first" rule for existing systems):
 
 1. Read the existing code relevant to the change;
-2. Check the related topic directories (`docs/NN_<name>/`) — old requirements/designs are the best source of "why it is the way it is", and same-topic optimizations update those documents directly.
+2. Check the related topic directories (`docs/NN_<name>/`) — old requirements/designs are the best source of "why it is the way it is", and same-topic optimizations update those documents directly. **Open Questions from a previous verification are checked here first** — an unresolved warning from the last change blocks the next one until it is closed or explicitly re-scoped.
 
 Greenfield (no existing system): skip the topic-directory step.
 

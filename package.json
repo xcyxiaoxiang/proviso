@@ -1,8 +1,11 @@
 {
   "name": "proviso",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "type": "module",
   "main": ".opencode/plugins/proviso.js",
+  "scripts": {
+    "test": "node --test"
+  },
   "pi": {
     "extensions": ["./.pi/extensions/proviso.ts"],
     "skills": ["./skills"]
