@@ -62,6 +62,15 @@ For each task, in order:
 
 **Refactor scope.** The TDD cycle's refactor step covers the code you just changed. Touching pre-existing duplication or naming is expansion: record it in the ledger's findings or tell the user — do not fix it under this task.
 
+**UI copy budget.** Explanatory text beside features is off by default — small print patches a bad information architecture. Decide with this ladder:
+
+1. Would deleting the text mislead the user? No → delete it.
+2. Can naming, icon, or layout carry the meaning instead? Yes → fix the design, add no text.
+3. Is it a permanent UI element? Then at most one line, at the lowest hierarchy level.
+4. Is it an empty state, a destructive-action confirmation, or first-run guidance? Then it is allowed by default.
+
+A page where icons, labels, and layout explain themselves is the goal.
+
 **Comment discipline.** Comments explain why, not what. One line is the limit — past that, delete the comment or change the code. Multi-step logic gets numbered steps (1. → 1.1 → 1.1.1), matching the document numbering. A behavior change updates its comments in the same edit; a stale comment is a defect. Unrelated comments stay untouched.
 
 Bad — the comment restates the code:
@@ -126,6 +135,7 @@ When all tasks are complete: run the full suite, mark the ledger, and announce t
 - Refactor or "improve" code the task did not touch
 - Add features, abstractions, or configuration the documents do not ask for
 - Write comments that restate the code, or let them go stale
+- Add explanatory small print beside features without passing the delete test
 
 ---
 

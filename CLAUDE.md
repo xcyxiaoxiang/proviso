@@ -52,7 +52,7 @@ A constant baseline applies every turn — the coding discipline in Core Discipl
 - **Doc drift is a bug** — behavior changes update the documents first, then the code;
 - **Defensive additions** are allowed during development (transparent + flowing back to the docs); **expansion** is forbidden;
 - Verification requires **evidence** — no `file:line`, no "met".
-- **Coding discipline, every turn**: ask when uncertain · least code that solves the stated problem · every changed line traces to the request · instructions become verifiable goals · comments explain why, one line, numbered steps.
+- **Coding discipline, every turn**: ask when uncertain · least code that solves the stated problem · every changed line traces to the request · instructions become verifiable goals · comments explain why, one line, numbered steps · UI text is a liability — no explanatory small print; fix the design first.
 
 ## Project Structure
 

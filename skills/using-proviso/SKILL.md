@@ -48,6 +48,7 @@ These rules hold every turn — not only inside the gated workflow.
 3. **Surgical changes.** Every changed line traces back to the user's request. Clean up only the orphans your own change created; leave unrelated code, comments, and formatting alone.
 4. **Goal-driven execution.** Turn the instruction into a verifiable goal before touching code — "fix the bug" becomes "write the failing test, then make it pass".
 5. **Comment discipline.** Comments explain why, never what. One line is the limit — past that, delete it or change the code. Multi-step logic gets numbered steps (1. → 1.1 → 1.1.1).
+6. **UI copy is a liability.** No explanatory text beside features unless deleting it would mislead the user — fix naming/icons/layout first.
 
 Trivial tasks need judgment, not ceremony.
 

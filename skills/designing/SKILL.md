@@ -45,6 +45,7 @@ Rules:
 
 - **Fill by situation**: an inapplicable section is omitted entirely; an applicable one MUST carry real content — never prose placeholders;
 - Diagrams (mermaid / ASCII) wherever they clarify more than prose — architecture, flows, states, relations;
+- **UI copy budget** (when the project has a UI): explanatory text beside features is off by default — a one-line helper must pass the delete test ("what would the user get wrong without it?"); empty states, destructive-action confirmations, and first-run guidance are the allowed exceptions; prefer fixing naming, icons, and layout over adding small print;
 - **The bar**: a developer reads it and builds; an AI reads it and executes accurately. If an implementer would have to guess, add the missing precision.
 
 ---
