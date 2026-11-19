@@ -32,8 +32,26 @@ read_json_field() {
 }
 
 # Write a dotted field path in a JSON file, preserving formatting.
+# Prefer a literal `"version": "<old>"` replacement so inline arrays and
+# indentation survive byte-for-byte; a jq rewrite reflows them and creates
+# unrelated diff noise. jq remains as a fallback for unusual formats.
 write_json_field() {
   local file="$1" field="$2" value="$3"
+  local old_value
+  old_value=$(read_json_field "$file" "$field")
+
+  # Already at the target value: touch nothing.
+  if [[ "$old_value" == "$value" ]]; then
+    return 0
+  fi
+
+  if [[ -n "$old_value" && "$old_value" != "null" ]]; then
+    perl -pi -e "s/\"version\": \"\Q$old_value\E\"/\"version\": \"$value\"/" "$file"
+    if [[ "$(read_json_field "$file" "$field")" == "$value" ]]; then
+      return 0
+    fi
+  fi
+
   local jq_path
   jq_path=$(echo "$field" | sed -E 's/\.([0-9]+)/[\1]/g' | sed 's/^/./' | sed 's/\.\././g')
   local tmp="${file}.tmp"
