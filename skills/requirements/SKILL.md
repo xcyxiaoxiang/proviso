@@ -91,7 +91,7 @@ Use `templates/requirements.md` as the scaffold. Key rules:
 - **Acceptance criteria per requirement**, numbered `4.x.y` — these are the verifiable proof of delivery and the basis of verification;
 - Support "**current behavior → target behavior**" for existing systems;
 - Diagrams where helpful (mermaid / ASCII); tables use plain `1. 2. 3.` numbering;
-- Content language follows the user/project; the section framework follows the template;
+- Write the whole document in the user's language — headings included; section numbering and order follow the template (its English headings are semantic anchors — translate them; an explicit `AGENTS.md` declaration "Document language: 中文" overrides inference);
 - Keep the **Change Log** (end of the document) current — every update appends a line (date / what / why).
 
 ---

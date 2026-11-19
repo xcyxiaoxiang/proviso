@@ -61,6 +61,7 @@ Proviso/
 - **Topic directories**: `docs/NN_<name>/` — one per topic; never archived or moved — same-topic optimizations update the documents in place
 - **Change Log**: requirements / design documents keep a Change Log section at the end
 - **Numbering**: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`
+- **Document language**: write `requirements.md` / `design.md` / `tasks.md` in the user's language — headings included (template English headings are semantic anchors; numbering and order unchanged); an explicit declaration here overrides inference
 - **Diagrams**: prefer mermaid / ASCII wherever they clarify more than prose
 - **User stories in requirements**: every requirement opens with "As a … I want … so that …"
 - **TDD**: always write the failing test first, then implement, then verify

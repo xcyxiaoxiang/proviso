@@ -53,6 +53,8 @@ Rules:
 
 Use `templates/design.md` as the scaffold. Save to `docs/NN_<name>/design.md`. Keep its **Change Log** current on every update.
 
+Write the whole document in the user's language — headings included; the template's English headings are semantic anchors (translate them, keep the numbering and order). An explicit `AGENTS.md` declaration ("Document language: 中文") overrides inference.
+
 ---
 
 ## Step 4: Self-Review

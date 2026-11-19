@@ -1,4 +1,10 @@
 <!-- Task list scaffold.
+     Language: write the whole document in the user's language — headings included.
+     The English headings below are semantic anchors: translate them; numbering and
+     section order stay unchanged. AGENTS.md may declare the document language
+     explicitly ("Document language: 中文"), which overrides inference.
+     Anchor map (English → 中文):
+       Global Constraints → 全局约束 · Tasks → 任务 · Ledger → 账本 · Task → 任务
      Numbering: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`.
      A task is ONE CHECKABLE RESULT — not a micro-step, not a bundle of unrelated work.
      Three mandatory elements per task: service requirements, boundary whitelist, ledger record. -->

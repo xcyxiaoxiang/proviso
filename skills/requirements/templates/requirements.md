@@ -1,5 +1,14 @@
 <!-- Requirements document scaffold.
-     Content language follows the user/project; keep the section framework.
+     Language: write the whole document in the user's language — headings included.
+     The English headings below are semantic anchors: translate them; numbering and
+     section order stay unchanged. AGENTS.md may declare the document language
+     explicitly ("Document language: 中文"), which overrides inference.
+     Anchor map (English → 中文):
+       Background & Problem → 背景与问题 · Current State → 现状 · Problems / Motivation → 核心问题
+       Target State → 目标状态 · Goals → 目标 · Overall Goal → 总体目标 · Breakdown → 分解
+       Success Criteria → 成功标准 · Scope & Non-Goals → 范围与非目标 · Scope → 范围
+       Non-Goals → 非目标 · Functional Requirements → 功能需求 · Overall Acceptance → 总体验收
+       Open Questions → 开放问题 · Change Log → 变更记录
      Numbering: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`.
      Diagrams (mermaid / ASCII) welcome wherever they clarify more than prose. -->
 

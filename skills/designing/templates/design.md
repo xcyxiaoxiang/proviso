@@ -1,4 +1,16 @@
 <!-- Design document scaffold.
+     Language: write the whole document in the user's language — headings included.
+     The English headings below are semantic anchors: translate them; numbering and
+     section order stay unchanged. AGENTS.md may declare the document language
+     explicitly ("Document language: 中文"), which overrides inference.
+     Anchor map (English → 中文):
+       Context & Goals → 背景与目标 · Design Scope → 设计范围 · Out of Scope → 不涉及
+       Overall Architecture → 总体架构 · Business Logic → 业务逻辑 · Data Design → 数据设计
+       UI Design → UI 设计 · Interfaces & Artifacts → 接口与产物
+       Key Technical Decisions → 关键技术决策 · Layering & File Organization → 分层与文件组织
+       Implementation Order & Acceptance Mapping → 实施顺序与验收映射
+       Implementation Order → 实施顺序 · Acceptance Mapping → 验收映射
+       Risks & Mitigations → 风险与缓解 · Change Log → 变更记录
      Numbering: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`.
      Fill by situation: omit sections the project does not involve; every section kept
      MUST carry real content — no prose placeholders.

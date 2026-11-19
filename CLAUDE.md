@@ -81,6 +81,7 @@ Proviso/
 - **Topic directories**: `docs/NN_<name>/` — never archived or moved
 - **Change Log**: requirements / design documents keep a Change Log at the end
 - **Numbering**: headings `1. / 1.1 / 1.1.1`; table indexes plain `1. 2. 3.`
+- **Document language**: write `requirements.md` / `design.md` / `tasks.md` in the user's language — headings included (template English headings are semantic anchors; numbering and order unchanged); an explicit declaration here overrides inference
 - **TDD**: always write the failing test first
 - **Comment language**: follow the codebase's existing dominant comment language; multi-step comments use the document numbering scheme (1. / 1.1 / 1.1.1)
 
