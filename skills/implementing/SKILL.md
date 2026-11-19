@@ -45,7 +45,7 @@ Run wave by wave; inside one wave, tasks execute in parallel:
    - **interface contracts from the design document — never a sibling task's in-flight code**: parallel siblings cannot see each other; when a wave finishes, the controller reconciles the actual signatures against the design and records any deviation;
    - acceptance points and verification means.
 2. **Dispatch the wave** — one subagent per task with `implementer-brief.md`, in parallel where the harness supports it (`background` lanes; when it does not, run the wave sequentially). Before dispatching, check that the wave's whitelists do not overlap — an overlap means the wave was mis-planned: split it. Rules for each subagent stay as before:
-   - **TDD is mandatory**: failing test first → minimal implementation → full suite green;
+   - **TDD is the default for logic changes**: failing test first → minimal implementation → full suite green; other task types use the verification means their task declares (see Verification by Task Type);
    - touch only whitelisted files; **no guessing** — unclear interfaces get looked up in code or reported, never invented;
 3. **Review with two verdicts** — a fresh reviewer per task with `task-reviewer.md` (reviewers may also run in parallel):
    - **Verdict 1 · Requirement compliance**: implements what the req entries say — nothing missing, nothing extra ("more" check: defensive additions are allowed and must flow back to the docs; expansion is rejected);
@@ -53,6 +53,21 @@ Run wave by wave; inside one wave, tasks execute in parallel:
    - The reviewer is read-only, independent, and never told what to ignore.
 4. **Fix loop**: on failure, the same implementer fixes; the same reviewer re-checks only the flagged items; repeat until both verdicts pass — the wave is not done until every task in it passes;
 5. **Update the ledger after the wave** — the controller records every finished task at once (parallel workers never write `tasks.md`); include the wave's summary in the next wave's dispatch.
+
+## Verification by Task Type
+
+Every task needs an objective, executable "done" criterion — TDD is the default way to get one for logic, not the only way:
+
+| Task type | Default verification |
+|-----------|---------------------|
+| Logic, algorithms, state machines, bug fixes | **TDD** — failing test first, then make it pass |
+| Existing code without tests | **Characterization tests** — pin current behavior first, then change |
+| UI layout, styling, copy | **Snapshot / visual check** — render and inspect; a CSS rule does not earn a unit test |
+| API / module contracts, parallel waves | **Contract-first** — types or specs written before implementation |
+| Configuration, wiring, scaffolding | **Smoke test** — the thing boots and the path works |
+| Genuinely uncertain design | **Spike** — throwaway prototype, delete it, then rebuild under the real discipline |
+
+The uniform rule behind the table: never accept "it works" as evidence. Whatever the type, the task's `Verification` field names the command or inspection that proves it.
 
 ## Discipline During Implementation
 

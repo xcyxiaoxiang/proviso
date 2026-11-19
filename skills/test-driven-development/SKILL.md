@@ -22,9 +22,11 @@ Write the test first. Watch it fail. Write minimal code to pass.
 - Behavior changes
 
 **Exceptions (ask your human partner):**
-- Throwaway prototypes
+- Throwaway prototypes (spikes)
 - Generated code
 - Configuration files
+- Existing code without tests — pin current behavior with characterization tests first, then change
+- UI layout/styling/copy — render and inspect (snapshot or visual check); a CSS rule does not earn a unit test
 
 Thinking "skip TDD just this once"? Stop. That's rationalization.
 
